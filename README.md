@@ -8,6 +8,6 @@ These add-ons are primarily used only by the author, as such your individual mil
 
 ## Add-ons provided by this repository
 
--- **[Tailscale](/tailscale/README.md)**
+- **[Tailscale](/tailscale/README.md)**
 
-     Tailscale's zero-config VPN.
+    Tailscale's zero-config VPN.
