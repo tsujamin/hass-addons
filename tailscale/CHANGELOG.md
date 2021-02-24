@@ -15,3 +15,6 @@
 
 ## 1.4.4.0
 - Tailscale package updated to version `1.4.4`
+
+## 1.4.5.0
+- Tailscale package updated to version `1.4.5`
