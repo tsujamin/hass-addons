@@ -1,9 +1,9 @@
 {
     "name": "Tailscale",
-    "version": "1.2.10.0",
+    "version": "1.4.5.0",
     "slug": "tailscale",
     "description": "A zero config VPN",
-    "url": "https://github.com/tsujamin/hass-addons/tree/main/tailscale",
+    "url": "https://github.com/erdii/hass-addons/tree/main/tailscale",
     "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
     "startup": "application",
     "boot": "auto",
