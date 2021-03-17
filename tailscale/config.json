@@ -1,6 +1,6 @@
 {
     "name": "Tailscale",
-    "version": "1.6.0.0",
+    "version": "1.6.0.1",
     "slug": "tailscale",
     "description": "A zero config VPN",
     "url": "https://github.com/erdii/hass-addons/tree/main/tailscale",
@@ -12,7 +12,7 @@
         "NET_ADMIN"
     ],
     "devices": [
-        "/dev/net/tun:/dev/net/tun:rwm"
+        "/dev/net/tun"
     ],
     "options": {
         "hostname": "homeassistant"

@@ -13,3 +13,7 @@
 ## 1.6.0.0
 
 - Tailscale package updated to version `1.6.0`
+
+## 1.6.0.1
+
+- adapt device list in config.json to new config format
