@@ -1,4 +1,4 @@
-# Home Assistant Add-ons: @tsujamin's repository
+# Home Assistant Add-ons: @erdii's fork of tsujamin's repository
 
 This repository contains additional add-ons for your Home Assistant.
 These add-ons are primarily used only by the author, as such your individual milleage may vary.
