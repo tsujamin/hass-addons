@@ -12,7 +12,7 @@
         "NET_ADMIN"
     ],
     "devices": [
-        "/dev/net/tun:/dev/net/tun:rwm"
+        "/dev/net/tun"
     ],
     "options": {
         "hostname": "homeassistant"
