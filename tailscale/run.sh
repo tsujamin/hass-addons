@@ -23,6 +23,10 @@ if bashio::config.has_value 'hostname'; then
     TAILSCALE_FLAGS+=('-hostname' "$(bashio::config 'hostname')")
 fi
 
+if bashio::config.has_value 'advertise_routes'; then
+    TAILSCALE_FLAGS+=('-advertise-routes' "$(bashio::config 'advertise_routes')")
+fi
+
 if bashio::config.has_value 'port'; then
     TAILSCALED_FLAGS+=('-port', "$(bashio::config 'port')")
 fi
