@@ -87,7 +87,7 @@ Tailscale allows you do advertise routes to subnets, accessible on the network y
 
 This can be configured by adding the IP addresses or subnets (comma-separated) of routes you want to advertise to the `advertise_routes` option. For example:  advertise_routes: `192.168.1.0/24,192.168.2.1/32` to advertise the entire `192.168.1.0/24` subnet and additionally the host `192.168.2.1`.
 
-You will then need to visit Tailscale  to complete the setup:
+You will then need to visit Tailscale to complete the setup:
   1. Log into the admin portal: <https://login.tailscale.com/admin/>
   2. Find your Home-Assistant in the Machines tab and click on it.
   3. Click the "review" button under "Subnets" and enable your advertise route.
@@ -95,6 +95,17 @@ You will then need to visit Tailscale  to complete the setup:
 By default this option is not set, and only your Home Assistant will be accessible via Tailscale.
 
 See <https://tailscale.com/kb/1019/subnets> for more information.
+
+### Option: `advertise_exit_node`
+
+This option (if set) advertises that the Tailscale instance running on your Home Assistant can be used by other clients to connect to the internet (similar to a regular VPN service).
+
+If enabled, you will then need to visit Tailscale to complete the setup:
+  1. Log into the admin portal: <https://login.tailscale.com/admin/>
+  2. Find your Home-Assistant in the Machines tab and click on it.
+  3. Click the "review" button under "Subnets" and enable "Use as exit node".
+
+See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
 ## Support
 

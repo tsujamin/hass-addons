@@ -27,6 +27,12 @@ if bashio::config.has_value 'advertise_routes'; then
     TAILSCALE_FLAGS+=('-advertise-routes' "$(bashio::config 'advertise_routes')")
 fi
 
+if basio::config.has_value 'advertise_exit_node'; then
+    if bashio::config.true 'advertise_exit_node'; then
+        TAILSCALE_FLAGS+=('-advertise-exit-node')
+    fi
+fi
+
 if bashio::config.has_value 'port'; then
     TAILSCALED_FLAGS+=('-port', "$(bashio::config 'port')")
 fi

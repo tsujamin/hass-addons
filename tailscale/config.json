@@ -19,6 +19,7 @@
     },
     "schema": {
         "advertise_routes": "str?",
+        "advertise_exit_node": "bool?",
         "auth_key": "str",
         "port": "int(0,65535)?",
         "hostname": "str?",
