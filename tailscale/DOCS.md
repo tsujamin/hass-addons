@@ -107,6 +107,26 @@ If enabled, you will then need to visit Tailscale to complete the setup:
 
 See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
+## How to connect your Home Assistant App (iOS)
+
+To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
+
+1. Open up the sidebar by clicking the hamburger button on the top-right of the Home Assistant App, and click "App Configuration"
+
+![Open App Configuration under the sidebar menu](img/menu.png)
+
+2. Click the name your Home Assistant instance at the top of the menu (e.g. "Home")
+
+![Click your Home Assistant instnace at the top of the App Configuration menu](img/app_config.png)
+
+3. Update the External IP to the IP assigned to your Home Assistant by Tailscale (likely `100.X.Y.Z`). You will likely need to also specify the port (by default this is `8123`).
+
+![Update your external IP to that assigned by Tailscale, and port to the port you configured Home Assistant to listen on](img/connection.png)
+
+4. Update your Internal IP if required, and assign your home WI-FI network name (SSID) so that the App knows which network your Home-Assistant is connected to internally.
+
+![Update your internal network and assign your home SSID](img/set_internal.png)
+
 ## Support
 
 Got questions? Open an issue at <https://github.com/tsujamin/hass-addons/issues>
