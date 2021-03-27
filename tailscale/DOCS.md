@@ -81,6 +81,21 @@ This option (if set) determins the UDP port that `tailscaled` listens on.
 
 It shouldn't be neccesary to set this value as a random port is chosen at startup and UPNP/NAT-PMP should ensure it is appropriately accessible.
 
+### Option: `advertise_routes`
+
+Tailscale allows you do advertise routes to subnets, accessible on the network your Home Assistant is connected to, to other clients. 
+
+This can be configured by adding the IP addresses or subnets (comma-separated) of routes you want to advertise to the `advertise_routes` option. For example:  advertise_routes: `192.168.1.0/24,192.168.2.1/32` to advertise the entire `192.168.1.0/24` subnet and additionally the host `192.168.2.1`.
+
+You will then need to visit Tailscale  to complete the setup:
+  1. Log into the admin portal: <https://login.tailscale.com/admin/>
+  2. Find your Home-Assistant in the Machines tab and click on it.
+  3. Click the "review" button under "Subnets" and enable your advertise route.
+
+By default this option is not set, and only your Home Assistant will be accessible via Tailscale.
+
+See <https://tailscale.com/kb/1019/subnets> for more information.
+
 ## Support
 
 Got questions? Open an issue at <https://github.com/tsujamin/hass-addons/issues>
