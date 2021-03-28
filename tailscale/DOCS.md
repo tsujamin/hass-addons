@@ -94,6 +94,8 @@ You will then need to visit Tailscale to complete the setup:
 
 By default this option is not set, and only your Home Assistant will be accessible via Tailscale.
 
+Note: Tailscale may say "This machine has IP forwarding disabled and cannot relay traffic" - currently this appears to be inaccurate and you are still able to use subnets published Home Assistant.
+
 See <https://tailscale.com/kb/1019/subnets> for more information.
 
 ### Option: `advertise_exit_node`
@@ -103,7 +105,9 @@ This option (if set) advertises that the Tailscale instance running on your Home
 If enabled, you will then need to visit Tailscale to complete the setup:
   1. Log into the admin portal: <https://login.tailscale.com/admin/>
   2. Find your Home-Assistant in the Machines tab and click on it.
-  3. Click the "review" button under "Subnets" and enable "Use as exit node".
+  3. Click the "Review Route Settings" button under the "..." button on the top right, and enable "Use as exit node".
+
+Note: Tailscale may say "This machine has IP forwarding disabled and cannot relay traffic" - currently this appears to be inaccurate and you are still able to use your Home Assistant as an exit node.
 
 See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
