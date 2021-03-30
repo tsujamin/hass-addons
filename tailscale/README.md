@@ -4,7 +4,7 @@
 
 This Add-on installs Tailscale, a zero-config VPN, enabling you to remotely access your Home Assistant system away from your home network.
 
-For more information, see the Add-on documentation and Tailscale's website
+This is an unofficial Tailscale Add-on: For more information, see the Add-on documentation and Tailscale's website. 
 
 <https://tailscale.com/>
 
