@@ -111,6 +111,12 @@ Note: Tailscale may say "This machine has IP forwarding disabled and cannot rela
 
 See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
+### Option: `exit_node`
+
+This option (if set) configures tailscale to route all non-Tailscale internet traffic through the specified tailscale peer IP. 
+
+If enabled, you will need to have preconfigured the specified IP as an exit node, see the [Official Guide](https://tailscale.com/kb/1103/exit-nodes/#:~:text=in%20the%20future.-,Step%201%3A%20Advertise%20a%20device%20as%20an%20exit%20node,-From%20the%20device) for more information
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
