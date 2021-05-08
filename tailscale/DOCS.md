@@ -81,6 +81,56 @@ This option (if set) determins the UDP port that `tailscaled` listens on.
 
 It shouldn't be neccesary to set this value as a random port is chosen at startup and UPNP/NAT-PMP should ensure it is appropriately accessible.
 
+### Option: `advertise_routes`
+
+Tailscale allows you do advertise routes to subnets, accessible on the network your Home Assistant is connected to, to other clients. 
+
+This can be configured by adding the IP addresses or subnets (comma-separated) of routes you want to advertise to the `advertise_routes` option. For example:  advertise_routes: `192.168.1.0/24,192.168.2.1/32` to advertise the entire `192.168.1.0/24` subnet and additionally the host `192.168.2.1`.
+
+You will then need to visit Tailscale to complete the setup:
+  1. Log into the admin portal: <https://login.tailscale.com/admin/>
+  2. Find your Home-Assistant in the Machines tab and click on it.
+  3. Click the "review" button under "Subnets" and enable your advertise route.
+
+By default this option is not set, and only your Home Assistant will be accessible via Tailscale.
+
+Note: Tailscale may say "This machine has IP forwarding disabled and cannot relay traffic" - currently this appears to be inaccurate and you are still able to use subnets published Home Assistant.
+
+See <https://tailscale.com/kb/1019/subnets> for more information.
+
+### Option: `advertise_exit_node`
+
+This option (if set) advertises that the Tailscale instance running on your Home Assistant can be used by other clients to connect to the internet (similar to a regular VPN service).
+
+If enabled, you will then need to visit Tailscale to complete the setup:
+  1. Log into the admin portal: <https://login.tailscale.com/admin/>
+  2. Find your Home-Assistant in the Machines tab and click on it.
+  3. Click the "Review Route Settings" button under the "..." button on the top right, and enable "Use as exit node".
+
+Note: Tailscale may say "This machine has IP forwarding disabled and cannot relay traffic" - currently this appears to be inaccurate and you are still able to use your Home Assistant as an exit node.
+
+See <https://tailscale.com/kb/1103/exit-nodes> for more information.
+
+## How to connect your Home Assistant App (iOS)
+
+To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
+
+1. Open up the sidebar by clicking the hamburger button on the top-right of the Home Assistant App, and click "App Configuration"
+
+![Open App Configuration under the sidebar menu](img/menu.png)
+
+2. Click the name your Home Assistant instance at the top of the menu (e.g. "Home")
+
+![Click your Home Assistant instnace at the top of the App Configuration menu](img/app_config.png)
+
+3. Update the External IP to the IP assigned to your Home Assistant by Tailscale (likely `100.X.Y.Z`). You will likely need to also specify the port (by default this is `8123`).
+
+![Update your external IP to that assigned by Tailscale, and port to the port you configured Home Assistant to listen on](img/connection.png)
+
+4. Update your Internal IP if required, and assign your home WI-FI network name (SSID) so that the App knows which network your Home-Assistant is connected to internally.
+
+![Update your internal network and assign your home SSID](img/set_internal.png)
+
 ## Support
 
 Got questions? Open an issue at <https://github.com/tsujamin/hass-addons/issues>
