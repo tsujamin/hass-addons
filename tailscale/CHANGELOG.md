@@ -26,3 +26,6 @@
 ## 1.6.0.1
 - Update device list to new config format (merged from @erdii)
 - Add `advertise_exit_node` support
+
+## 1.8.0.0
+- Tailscale package updated to version `1.8.0`
