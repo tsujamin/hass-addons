@@ -29,3 +29,6 @@
 
 ## 1.8.0.0
 - Tailscale package updated to version `1.8.0`
+
+## 1.8.3.0
+- Tailscale package updated to version `1.8.3`
