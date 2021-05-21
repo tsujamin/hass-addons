@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.8.5.0
+- Tailscale package updated to version `1.8.5`
+
 ## 1.8.3.1
 - Add `exit_node` support (contributed by @jackmac92)
 
