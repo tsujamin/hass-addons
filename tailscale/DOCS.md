@@ -115,7 +115,13 @@ See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
 This option (if set) configures tailscale to route all non-Tailscale internet traffic through the specified tailscale peer IP. 
 
-If enabled, you will need to have preconfigured the specified IP as an exit node, see the [Official Guide](https://tailscale.com/kb/1103/exit-nodes/#:~:text=in%20the%20future.-,Step%201%3A%20Advertise%20a%20device%20as%20an%20exit%20node,-From%20the%20device) for more information
+If enabled, you will need to have preconfigured the specified IP as an exit node, see the [Official Guide](https://tailscale.com/kb/1103/exit-nodes/#:~:text=in%20the%20future.-,Step%201%3A%20Advertise%20a%20device%20as%20an%20exit%20node,-From%20the%20device) for more information.
+
+### Option: `accept_routes`
+
+This option (if set) configures tailscale to enable connectivity to 100.X style Tailscale IP addresses.
+
+See [Subnets](https://tailscale.com/kb/1019/subnets/#step-5-use-your-subnet-routes-from-other-machines) for more information.
 
 ## How to connect your Home Assistant App (iOS)
 

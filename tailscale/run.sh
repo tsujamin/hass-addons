@@ -33,6 +33,12 @@ if bashio::config.has_value 'advertise_exit_node'; then
     fi
 fi
 
+if bashio::config.has_value 'accept_routes'; then
+    if bashio::config.true 'accept_routes'; then
+        TAILSCALE_FLAGS+=('-accept-routes')
+    fi
+fi
+
 if bashio::config.has_value 'exit_node'; then
     TAILSCALE_FLAGS+=('-exit-node' "$(bashio::config 'exit_node')")
 fi
