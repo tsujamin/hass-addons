@@ -7,7 +7,7 @@ ARG TAILSCALE_VERSION="1.12.3"
 ENV LANG C.UTF-8
 
 RUN apt-get update
-RUN apt-get install -y wget iptables
+RUN apt-get install -y wget iptables iproute2
 
 # Download and install tailscale to /bin from https://pkgs.tailscale.com/stable/#static
 COPY install.sh /
