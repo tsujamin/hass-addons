@@ -47,6 +47,12 @@ if bashio::config.has_value 'port'; then
     TAILSCALED_FLAGS+=('-port', "$(bashio::config 'port')")
 fi
 
+if bashio::config.has_value 'userspace_networking'; then
+    if bashio::config.true 'userspace_networking'; then
+        TAILSCALED_FLAGS+=('--tun=userspace-networking')
+    fi
+fi
+
 # Start tailscaled in the background
 tailscaled -cleanup ${TAILSCALED_FLAGS[@]}
 tailscaled ${TAILSCALED_FLAGS[@]} & 

@@ -123,6 +123,11 @@ This option (if set) configures tailscale to enable connectivity to 100.X style 
 
 See [Subnets](https://tailscale.com/kb/1019/subnets/#step-5-use-your-subnet-routes-from-other-machines) for more information.
 
+### Option: `userspace_networking`
+This option (if set) configures tailscale to use its userspace networking mode. This should be unnecessary but can be tested if connectivity issues occur.
+
+See [Userspace networking (container) mode](https://tailscale.com/kb/1112/userspace-networking/). for more information.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 

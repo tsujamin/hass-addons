@@ -25,6 +25,7 @@
         "port": "int(0,65535)?",
         "hostname": "str?",
         "force_reauth": "bool?",
-        "accept_routes": "bool?"
+        "accept_routes": "bool?",
+        "userspace_networking": "bool?"
     }
 }
