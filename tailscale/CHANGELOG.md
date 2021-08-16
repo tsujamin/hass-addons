@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.12.3.2
+- Add `userspace_networking` support
+
 ## 1.12.3.1
 - Rebased addon on Debian to alleviate [DNS issues](https://github.com/tsujamin/hass-addons/issues/16) at build time (contributed by @kusha)
 
