@@ -1,7 +1,7 @@
 # Changelog
 
 ## 1.14.0.1
-- Fix missing sysctl dependency
+- Fix missing sysctl dependency.0.
 
 ## 1.14.0.0
 - Tailscale package updated to version `1.14.0`
