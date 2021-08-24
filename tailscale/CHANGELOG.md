@@ -1,7 +1,10 @@
 # Changelog
 
+## 1.14.0.2
+- Revert container to legacy iptables.
+
 ## 1.14.0.1
-- Fix missing sysctl dependency.0.
+- Fix missing sysctl dependency.
 
 ## 1.14.0.0
 - Tailscale package updated to version `1.14.0`
