@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.14.0
+- Tailscale package updated to version `1.14.0`
+
 ## 1.12.3.2
 - Add `userspace_networking` support
 
