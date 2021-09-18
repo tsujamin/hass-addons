@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.14.3.0
+- Tailsacle package updatesd to version `1.14.3`
+
 ## 1.14.0.2
 - Revert container to legacy iptables.
 
