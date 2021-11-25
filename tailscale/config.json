@@ -1,6 +1,6 @@
 {
     "name": "Tailscale",
-    "version": "1.16.0.0",
+    "version": "1.18.0.0",
     "slug": "tailscale",
     "description": "A zero config VPN",
     "url": "https://github.com/tsujamin/hass-addons/tree/main/tailscale",
