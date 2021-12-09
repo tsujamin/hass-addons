@@ -43,6 +43,10 @@ if bashio::config.has_value 'exit_node'; then
     TAILSCALE_FLAGS+=('-exit-node' "$(bashio::config 'exit_node')")
 fi
 
+if bashio::config.has_value 'tags'; then
+    TAILSCALE_FLAGS+=('-advertise-tags' "$(bashio::config 'tags')")
+fi
+
 if bashio::config.has_value 'port'; then
     TAILSCALED_FLAGS+=('-port', "$(bashio::config 'port')")
 fi

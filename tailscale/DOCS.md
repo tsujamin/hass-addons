@@ -128,6 +128,11 @@ This option (if set) configures tailscale to use its userspace networking mode. 
 
 See [Userspace networking (container) mode](https://tailscale.com/kb/1112/userspace-networking/). for more information.
 
+### Option: `tags`
+This option (if set) configures tailscale to advertise the given tags. The format is the same as for `tailscale up --advertise-tags`: all tags prefixed with `tag:` and separated with commas (ex: `tag:server,tag:hass`).
+
+See [Server role accounts with ACL tags](https://tailscale.com/kb/1068/acl-tags/) for more information.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
