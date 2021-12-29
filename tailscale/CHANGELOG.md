@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.18.2.0
+- Tailscale package updated to version `1.18.2`
+
 ## 1.18.1.1
 - Adds `-advertise-tags` support (contributed by @peterkeen)
 
