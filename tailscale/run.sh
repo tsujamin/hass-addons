@@ -6,7 +6,7 @@ set -eum
 CONFIG_PATH=/data/options.json
 TAILSCALE_SOCKET="/var/run/tailscale/tailscaled.sock"
 TAILSCALE_FLAGS=()
-TAILSCALED_FLAGS=("-state" "/data/tailscaled.state" "-socket" "$TAILSCALE_SOCKET")
+TAILSCALED_FLAGS=("-statedir" "/data" "-state" "/data/tailscaled.state" "-socket" "$TAILSCALE_SOCKET")
 
 # Parse config to construct `tailscale up` args
 if bashio::config.has_value 'auth_key'; then
@@ -65,6 +65,11 @@ tailscaled ${TAILSCALED_FLAGS[@]} &
 i=0
 while test $i -lt 12; do
     if test -e "$TAILSCALE_SOCKET"; then
+
+        if bashio::config.has_value 'cert_domain'; then
+          tailscale cert --cert-file "/ssl/$(bashio::config 'cert_domain').crt" --key-file "/ssl/$(bashio::config 'cert_domain').key" $(bashio::config 'cert_domain')
+        fi
+
         # bring up the tunnel and fd tailscaled
         tailscale -socket "$TAILSCALE_SOCKET" up ${TAILSCALE_FLAGS[@]} && fg
         exit $?

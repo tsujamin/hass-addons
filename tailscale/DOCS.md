@@ -133,6 +133,20 @@ This option (if set) configures tailscale to advertise the given tags. The forma
 
 See [Server role accounts with ACL tags](https://tailscale.com/kb/1068/acl-tags/) for more information.
 
+### Option: `cert_domain`
+
+This option (if set) configures tailscale to provision TLS certificates. The format is the same as for `tailscale cert <your-domain>`. It's necessary to set the exact domain under which your home assistant instance is running. 
+
+1. Go to [Feature Previews page](https://login.tailscale.com/admin/settings/features)
+2. Enable and choose a Tailnet domain alias
+3. Find your Home-Assistant in the [Machines tab](https://login.tailscale.com/admin/machines) and note under which name your device is reachable
+4. Your device should now be reachable under https://<device-name>.<tailnet-domain-alias>.ts.net (But with an invalid ssl certificate)
+5. Go to the options page of this addon and set the above domain at `cert_domain`
+6. Restart the addon and visit again the above domain. You should have now a valid ssl certificate.
+7. You should now have to new files under `/ssl` which you can use to configure any webserver.
+
+See [Enabling HTTPS](https://tailscale.com/kb/1153/enabling-https/) for more information.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
