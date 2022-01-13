@@ -17,6 +17,9 @@
     "options": {
         "hostname": "homeassistant"
     },
+    "map": [
+        "ssl:rw"
+    ],
     "schema": {
         "advertise_routes": "str?",
         "advertise_exit_node": "bool?",
