@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.18.2.1
+- Adds Tailscale TLS certificate generation support (contributed by @patlux)
+
 ## 1.18.2.0
 - Tailscale package updated to version `1.18.2`
 
