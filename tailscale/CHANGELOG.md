@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.18.2.2
+- Adds `cert_domain` as a UI configuration option
+
 ## 1.18.2.1
 - Adds Tailscale TLS certificate generation support (contributed by @patlux)
 

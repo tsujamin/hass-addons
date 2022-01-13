@@ -1,6 +1,6 @@
 {
     "name": "Tailscale",
-    "version": "1.18.2.1",
+    "version": "1.18.2.2",
     "slug": "tailscale",
     "description": "A zero config VPN",
     "url": "https://github.com/tsujamin/hass-addons/tree/main/tailscale",
@@ -30,6 +30,7 @@
         "force_reauth": "bool?",
         "accept_routes": "bool?",
         "userspace_networking": "bool?",
-        "tags": "str?"
+        "tags": "str?",
+        "cert_domain": "str?"
     }
 }
