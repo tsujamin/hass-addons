@@ -7,6 +7,6 @@ If you're looking to open a PR to bump the Tailscale version:
 
   * Update the add-on version in `build.json` and Dockerfile
 
-  * Add a changelog entry with the content "Tailscale package updated to version `1.20.1`"
+  * Add a changelog entry with the content "Tailscale package updated to version `1.2.3`"
 
 Thanks for your contribution!
