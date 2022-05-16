@@ -39,5 +39,6 @@
         "userspace_networking": "bool?",
         "tags": "str?",
         "cert_domain": "str?"
-    }
+    },
+    "init": false
 }
