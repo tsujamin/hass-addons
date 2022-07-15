@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.26.2.2
+- Tailscale package updated to version `1.26.2`
+
 ## 1.26.2.1
 - Rolling back `1.26.2` update as binaries were removed from mirror
 
