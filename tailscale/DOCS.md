@@ -75,6 +75,19 @@ Once authentication to Tailscale's servers has been restored, you **must** set `
 
 This value defaults to `false`.
 
+### Option: `reset` (optional)
+
+Setting this option to `true` will cause Tailscale to reset its configuration settings by passing the `--reset` argument to `tailscale`.
+
+There are limited circumstances in which this setting is required, such as when changing published routes. In these circumstances, you log output will likely include lines such as
+
+```
+Error: changing settings via 'tailscale up' requires mentioning all
+non-default flags. To proceed, either re-run your command with --reset [...]
+```
+
+This value defaults to `false`.
+
 ### Option: `port` (optional)
 
 This option (if set) determins the UDP port that `tailscaled` listens on. 

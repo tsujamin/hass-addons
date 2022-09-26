@@ -19,6 +19,12 @@ if bashio::config.has_value 'force_reauth'; then
     fi
 fi
 
+if bashio::config.has_value 'reset'; then
+    if bashio::config.true 'reset'; then
+        TAILSCALE_FLAGS+=('-reset')
+    fi
+fi
+
 if bashio::config.has_value 'hostname'; then
     TAILSCALE_FLAGS+=('-hostname' "$(bashio::config 'hostname')")
 fi
