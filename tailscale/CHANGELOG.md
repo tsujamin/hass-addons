@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.32.0.0
+- Tailscale package updated to version `1.32.0`
+
 ## 1.30.2.0
 - Tailscale package updated to version `1.30.2`
 - Added the `reset` option
