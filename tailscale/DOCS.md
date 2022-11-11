@@ -164,6 +164,14 @@ This option (if set) configures tailscale to provision TLS certificates. The for
 
 See [Enabling HTTPS](https://tailscale.com/kb/1153/enabling-https/) for more information.
 
+### Option: `ssh`
+
+This option (if set) advertises that Tailscale is managing SSH connections which originate from the Tailscale network to this host. This allows you to connect to the addon using SSH. Thanks to [Tailscale SSH Console](https://tailscale.com/blog/ssh-console/), you can even connect to the instance directly in the browser.
+
+You can get a shell access to this addon, then from there, you can connect to the other hosts in your network.
+
+See <https://tailscale.com/kb/1193/tailscale-ssh/> for more information.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 

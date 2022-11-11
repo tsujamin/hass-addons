@@ -57,6 +57,12 @@ if bashio::config.has_value 'tags'; then
     TAILSCALE_FLAGS+=('-advertise-tags' "$(bashio::config 'tags')")
 fi
 
+if bashio::config.has_value 'ssh'; then
+    if bashio::config.true 'ssh'; then
+        TAILSCALE_FLAGS+=('--ssh')
+    fi
+fi
+
 if bashio::config.has_value 'port'; then
     TAILSCALED_FLAGS+=('-port', "$(bashio::config 'port')")
 fi

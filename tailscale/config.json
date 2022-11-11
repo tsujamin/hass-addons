@@ -27,7 +27,8 @@
     "accept_routes": "bool?",
     "userspace_networking": "bool?",
     "tags": "str?",
-    "cert_domain": "str?"
+    "cert_domain": "str?",
+    "ssh": "bool?"
   },
   "init": false
 }
