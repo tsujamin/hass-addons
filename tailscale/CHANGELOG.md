@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.32.3.0
+
+- Tailscale package updated to version `1.32.3`
+
 ## 1.32.2.1
 - Adds `ssh` as a configuration option, enabling the ability to use Tailscale's SSH feature to connect to the container (contributed by @Mincka)
 
