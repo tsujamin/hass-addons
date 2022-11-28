@@ -53,6 +53,12 @@ if bashio::config.has_value 'exit_node'; then
     TAILSCALE_FLAGS+=('-exit-node' "$(bashio::config 'exit_node')")
 fi
 
+if bashio::config.has_value 'snat_subnet_routes'; then
+    if bashio::config.false 'snat_subnet_routes'; then
+        TAILSCALE_FLAGS+=('-snat-subnet-routes=false')
+    fi
+fi
+
 if bashio::config.has_value 'tags'; then
     TAILSCALE_FLAGS+=('-advertise-tags' "$(bashio::config 'tags')")
 fi
