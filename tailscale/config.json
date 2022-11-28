@@ -15,20 +15,20 @@
   },
   "map": ["ssl:rw"],
   "schema": {
-    "advertise_routes": "str?",
-    "advertise_exit_node": "bool?",
     "auth_key": "str",
-    "exit_node": "str?",
-    "port": "int(0,65535)?",
-    "login_server": "str?",
-    "hostname": "str?",
     "force_reauth": "bool?",
     "reset": "bool?",
+    "hostname": "str?",
+    "login_server": "str?",
+    "advertise_routes": "str?",
+    "advertise_exit_node": "bool?",
     "accept_routes": "bool?",
-    "userspace_networking": "bool?",
+    "exit_node": "str?",
     "tags": "str?",
-    "cert_domain": "str?",
-    "ssh": "bool?"
+    "ssh": "bool?",
+    "port": "int(0,65535)?",
+    "userspace_networking": "bool?",
+    "cert_domain": "str?"
   },
   "init": false
 }
