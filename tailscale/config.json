@@ -11,7 +11,8 @@
   "privileged": ["NET_ADMIN"],
   "devices": ["/dev/net/tun"],
   "options": {
-    "hostname": "homeassistant"
+    "hostname": "homeassistant",
+    "snat_subnet_routes": true
   },
   "map": ["ssl:rw"],
   "schema": {
