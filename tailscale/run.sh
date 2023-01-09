@@ -73,6 +73,12 @@ if bashio::config.has_value 'userspace_networking'; then
     fi
 fi
 
+if bashio::config.has_value 'disable_dns'; then
+    if bashio::config.true 'disable_dns'; then
+        TAILSCALE_FLAGS+=('--accept-dns=false')
+    fi
+fi
+
 # Start tailscaled in the background
 tailscaled -cleanup ${TAILSCALED_FLAGS[@]}
 tailscaled ${TAILSCALED_FLAGS[@]} & 

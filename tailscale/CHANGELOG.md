@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.34.2.1
+- Adds `disable_dns` option for disabling MagicDNS for bug testing
+
 ## 1.34.2.0
 
 - Tailscale package updated to version `1.34.2`

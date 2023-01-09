@@ -172,6 +172,10 @@ You can get a shell access to this addon, then from there, you can connect to th
 
 See <https://tailscale.com/kb/1193/tailscale-ssh/> for more information.
 
+### Option: `disable_dns`
+
+This option disables `tailscale` from accepting DNS resolvers. It is currently for experimental testing.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
