@@ -1,6 +1,11 @@
 # Changelog
 
+## 1.36.0.0
+
+- Tailscale package updated to version `1.36.0`
+
 ## 1.34.2.1
+
 - Adds `disable_dns` option for disabling MagicDNS for bug testing
 
 ## 1.34.2.0
@@ -20,6 +25,7 @@
 - Tailscale package updated to version `1.32.3`
 
 ## 1.32.2.1
+
 - Adds `ssh` as a configuration option, enabling the ability to use Tailscale's SSH feature to connect to the container (contributed by @Mincka)
 
 ## 1.32.2.0
