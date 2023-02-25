@@ -1,8 +1,8 @@
 ---
-name: "Construção add-on"
+name: "Build add-on"
 
 env:
-  MONITORED_FILES: "apparmor.txt build.yaml config.yaml Dockerfile data rootfs build.json config.json"
+  MONITORED_FILES: apparmor.txt build.yaml config.yaml Dockerfile data rootfs build.json config.json
   
 on:
   push:
@@ -10,7 +10,7 @@ on:
 
 jobs:
   init:
-    name: Preparando a construção
+    name: Prepare a build
     runs-on: ubuntu-latest
     outputs:
       changed_files: ${{ steps.changed_files.outputs.all }}
@@ -19,11 +19,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Obtendo arquivos alterados
+      - name: Getting Changed Files
         id: changed_files
         uses: jitterbit/get-changed-files@v1
 
-      - name: Obtendo add-ons
+      - name: Getting add-ons
         id: addons
         run: |
           declare -a addons
@@ -33,13 +33,13 @@ jobs:
           echo "id=addons=${addons[@]}"
           echo "addons=${addons[@]}" >> "$GITHUB_OUTPUT"
 
-      - name: Obtendo add-ons alterados
+      - name: Getting changed add-ons
         id: changed_addons
         run: |
           declare -a changed_addons
           for addon in ${{ steps.addons.outputs.addons }}; do
             if [[ "${{ steps.changed_files.outputs.all }}" =~ $addon ]]; then
-              for file in ${{ env.MONITORED_FILES }}; do
+              for file in  ${{ env.MONITORED_FILES }}; do
                   if [[ "${{ steps.changed_files.outputs.all }}" =~ $addon/$file ]]; then
                     if [[ ! "${changed_addons[@]}" =~ $addon ]]; then
                       changed_addons+=("\"${addon}\",");
@@ -57,6 +57,7 @@ jobs:
             echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
           fi
 
+
   build:
     needs: init
     runs-on: ubuntu-latest
@@ -70,19 +71,19 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Login no DockerHub
+      - name: Login no Github
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Construindo ${{ matrix.addon }}
+      - name: Building ${{ matrix.addon }} 
         uses: home-assistant/builder@master
         with:
           args: |
             --${{ matrix.arch }} \
             --target /data/${{ matrix.addon }} \
-            --docker-hub ghcr.io/unisec \
+            --docker-hub ghcr.io/tsujamin \
             --image ${{ matrix.addon }}-${{ matrix.arch }} \
-            --addon
+            --addon 
