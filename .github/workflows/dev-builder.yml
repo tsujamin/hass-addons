@@ -1,0 +1,92 @@
+---
+name: "Development - Build add-on "
+ 
+env:
+  MONITORED_FILES: "apparmor.txt build.yaml config.yaml Dockerfile data rootfs build.json config.json"
+
+on:
+  pull_request:
+    branches: ["main"]
+
+  push:
+    branches: ["develop"]
+
+jobs:
+  init:
+    name: Prepare a build
+    runs-on: ubuntu-latest
+    outputs:
+      changed_files: ${{ steps.changed_files.outputs.all }}
+      changed_addons: ${{ steps.changed_addons.outputs.addons }}
+      changed: ${{ steps.changed_addons.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Getting Changed Files
+        id: changed_files
+        uses: jitterbit/get-changed-files@v1
+
+      - name: Getting add-ons
+        id: addons
+        run: |
+          declare -a addons
+          for addon in $(find ./ -name config.yaml -o -name config.json | cut -d "/" -f2 | sort -u); do
+            addons+=("$addon");
+          done
+          echo "id=addons=${addons[@]}"
+          echo "addons=${addons[@]}" >> "$GITHUB_OUTPUT"
+
+      - name: Getting changed add-ons
+        id: changed_addons
+        run: |
+          declare -a changed_addons
+          for addon in ${{ steps.addons.outputs.addons }}; do
+            if [[ "${{ steps.changed_files.outputs.all }}" =~ $addon ]]; then
+              for file in  ${{ env.MONITORED_FILES }}; do
+                  if [[ "${{ steps.changed_files.outputs.all }}" =~ $addon/$file ]]; then
+                    if [[ ! "${changed_addons[@]}" =~ $addon ]]; then
+                      changed_addons+=("\"${addon}\",");
+                    fi
+                  fi
+              done
+            fi
+          done
+          changed=$(echo ${changed_addons[@]} | rev | cut -c 2- | rev)
+          if [[ -n ${changed} ]]; then
+            echo "Changed add-ons: $changed";
+            echo "changed=true" >> "$GITHUB_OUTPUT";
+            echo "addons=[$changed]" >> "$GITHUB_OUTPUT";
+          else
+            echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
+          fi
+    
+  build:
+    needs: init
+    runs-on: ubuntu-latest
+    if: needs.init.outputs.changed == 'true'
+    name: Build ${{ matrix.arch }} ${{ matrix.addon }} add-on
+    strategy:
+      matrix:
+        addon: ${{ fromJson(needs.init.outputs.changed_addons) }}
+        arch: ["aarch64", "amd64", "armhf", "armv7"]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Login no Github
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Building ${{ matrix.addon }} 
+        uses: home-assistant/builder@master
+        with:
+          args: |
+            --${{ matrix.arch }} \
+            --target /data/${{ matrix.addon }} \
+            --docker-hub ghcr.io/tsujamin \
+            --image ${{ matrix.addon }}-${{ matrix.arch }} \
+            --addon \
+            --test

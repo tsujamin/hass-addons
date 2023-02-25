@@ -11,6 +11,7 @@
     "amd64",
     "i386"
   ],
+  "image": "ghcr.io/tsujamin/tailscale-{arch}",
   "startup": "application",
   "boot": "auto",
   "host_network": true,
@@ -23,9 +24,7 @@
   "options": {
     "hostname": "homeassistant"
   },
-  "map": [
-    "ssl:rw"
-  ],
+  "map":  ["ssl:rw"],
   "schema": {
     "advertise_routes": "str?",
     "advertise_exit_node": "bool?",

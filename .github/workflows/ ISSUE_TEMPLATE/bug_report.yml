@@ -1,0 +1,100 @@
+---
+name: Formulário para reporte de problemas
+description: Relate um problema relacionado a um dos complementos oficiais.
+body:
+  - type: markdown
+    attributes:
+      value: |
+       Este formulário de problema é apenas para relatar bugs com configurações **suportadas**!
+
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Descreva o problema que você está enfrentando
+      description: Forneça uma descrição clara e concisa do que é o bug.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: Que tipo de instalação você está executando?
+      description: >
+        Se você não sabe, pode encontrá-lo em: [Painel de configurações -> Sistema -> Saúde do sistema](https://my.home-assistant.io/redirect/system_health/).
+      options:
+        - Home Assistant OS
+        - Home Assistant Supervised
+
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: Em qual sistema operacional você está rodando?
+      options:
+        - Home Assistant Operating System
+        - Debian
+        - Other (e.g., Raspbian/Raspberry Pi OS/Fedora)
+
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: Com qual addon você está relatando um problema ?
+      options:
+        - Platformio
+        - SSH
+        - Wireguard
+  
+  - type: input
+    validations:
+      required: true
+    attributes:
+      label: Qual é a versão do complemento?
+      description: Pode ser encontrado no painel Supervisor -> guia Visão geral -> o complemento
+
+  - type: markdown
+    attributes:
+      value: |
+        # Detalhes
+
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Etapas para reproduzir o problema
+      description: |
+        Por favor, diga-nos exatamente como reproduzir seu problema.
+        Forneça instruções passo a passo claras e concisas e adicione trechos de código, se necessário.
+      value: |
+        1.
+        2.
+        3.
+        ...
+
+  - type: textarea
+    attributes:
+      label: Alguma coisa nos logs do Supervisor que possa ser útil para nós?
+      description: >
+        Os logs do Supervisor podem ser encontrados no [painel de configurações -> Sistema -> Logs -> Supervisor](https://my.home-assistant.io/redirect/logs/).
+      render: txt
+
+  - type: textarea
+    attributes:
+      label: Alguma coisa nos logs de complementos que possa ser útil para nós?
+      description: >
+        Os logs do complemento podem ser encontrados no painel Supervisor na página do complemento -> guia Logs.
+      render: txt
+
+  - type: textarea
+    attributes:
+      label: Informação adicional
+      description: >
+        Se você tiver alguma informação adicional para nós, use o campo abaixo.
+        Observe que você pode anexar capturas de tela ou gravações de tela aqui,
+        arrastando e soltando arquivos no campo abaixo.
