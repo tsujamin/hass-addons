@@ -1,6 +1,6 @@
 {
   "name": "Tailscale",
-  "version": "1.36.2.1",
+  "version": "1.36.2.2",
   "slug": "tailscale",
   "description": "A zero config VPN",
   "url": "https://github.com/tsujamin/hass-addons/tree/main/tailscale",
@@ -21,7 +21,8 @@
     "/dev/net/tun"
   ],
   "options": {
-    "hostname": "homeassistant"
+    "hostname": "homeassistant",
+    "userspace_networking": true
   },
   "map": [
     "ssl:rw"
