@@ -79,6 +79,12 @@ if bashio::config.has_value 'disable_dns'; then
     fi
 fi
 
+if bashio::config.has_value 'disable_snat_subnet_routes'; then
+    if bashio::config.true 'disable_snat_subnet_routes'; then
+        TAILSCALE_FLAGS+=('--snat-subnet-routes=false')
+    fi
+fi
+
 # Start tailscaled in the background
 tailscaled -cleanup ${TAILSCALED_FLAGS[@]}
 tailscaled ${TAILSCALED_FLAGS[@]} & 

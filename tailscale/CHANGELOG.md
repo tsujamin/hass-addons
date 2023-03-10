@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.36.2.3
+- Adds `disable_snat_subnet_routes` option
+
+## 1.36.2.2
+
+- Sets Userspace Networking as a default in new add-on installations. This appears to be the most compatible
+  option out-of-the-box for most users.
+
+## 1.36.2.1
+
+- Adds `ping` package to Tailscale container
+
 ## 1.36.2.0
 
 - Tailscale package updated to version `1.36.2`
