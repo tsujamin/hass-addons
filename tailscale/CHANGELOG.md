@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.38.1.0
+
+- Tailscale package updated to version `1.38.1`
+
 ## 1.36.2.3
 - Adds `disable_snat_subnet_routes` option
 
