@@ -87,7 +87,7 @@ fi
 
 # Start tailscaled in the background
 tailscaled -cleanup ${TAILSCALED_FLAGS[@]}
-tailscaled ${TAILSCALED_FLAGS[@]} & 
+tailscaled ${TAILSCALED_FLAGS[@]} &
 
 # Loop to wait for tailscaled to start
 i=0
