@@ -10,6 +10,11 @@ For more information, see the Add-on documentation and Tailscale's website.
 
 <https://tailscale.com/>
 
+If you are having issues starting/building the add-on after an update:
+  1. Wait 24 hours
+  2. **Rebuild** the add-on using the button in the add-on's page in Home Assistant Supervisor
+  3. If the app still does not start, raise an issue.   
+
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
