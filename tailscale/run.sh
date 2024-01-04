@@ -43,6 +43,12 @@ if bashio::config.has_value 'advertise_exit_node'; then
     fi
 fi
 
+if bashio::config.has_value 'advertise_connector'; then
+    if bashio::config.true 'advertise_connector'; then
+        TAILSCALE_FLAGS+=('-advertise-connector')
+    fi
+fi
+
 if bashio::config.has_value 'accept_routes'; then
     if bashio::config.true 'accept_routes'; then
         TAILSCALE_FLAGS+=('-accept-routes')
