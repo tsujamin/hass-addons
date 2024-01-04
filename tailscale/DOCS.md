@@ -176,6 +176,11 @@ See <https://tailscale.com/kb/1193/tailscale-ssh/> for more information.
 
 This option disables `tailscale` from accepting DNS resolvers. It is currently for experimental testing.
 
+### Option: `advertise_connector`
+
+This option (if set) configures tailscale to advertise as an _App Connector_. 
+See [Secure your SaaS with Tailscale App connectors](https://tailscale.com/blog/saas) for more information on how to utilise this feature.
+
 ## How to connect your Home Assistant App (iOS)
 
 To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
