@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.58.0.0
+- Tailscale package updated to version `1.58.0`
+
 ## 1.56.1.1
 - Adds `advertise_connector` as a configuration option, enabling the ability to use Tailscale's App Connector feature (contributed by @mooangus)
 
