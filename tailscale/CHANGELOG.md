@@ -1,90 +1,123 @@
 # Changelog
 
+## 1.62.1.0
+
+- Tailscale package updated to version `1.62.1`
+
 ## 1.62.0.0
+
 - Tailscale package updated to version `1.62.0`
 
 ## 1.60.1.0
+
 - Tailscale package updated to version `1.60.1`
 
 ## 1.60.0.0
+
 - Tailscale package updated to version `1.60.0`
 
 ## 1.58.2.0
+
 - Tailscale package updated to version `1.58.2`
 
 ## 1.58.0.0
+
 - Tailscale package updated to version `1.58.0`
 
 ## 1.56.1.1
+
 - Adds `advertise_connector` as a configuration option, enabling the ability to use Tailscale's App Connector feature (contributed by @mooangus)
 
 ## 1.56.1.0
+
 - Tailscale package updated to version `1.56.1`
 
 ## 1.56.0.0
+
 - Tailscale package updated to version `1.56.0`
 
 ## 1.54.1.0
+
 - Tailscale package updated to version `1.54.1`
 
 ## 1.54.0.0
+
 - Tailscale package updated to version `1.54.0`
 
 ## 1.52.1.0
+
 - Tailscale package updated to version `1.52.1`
 
 ## 1.52.0.0
+
 - Tailscale package updated to version `1.52.0`
 
 ## 1.50.1.0
+
 - Tailscale package updated to version `1.50.1`
 
 ## 1.50.0.0
+
 - Tailscale package updated to version `1.50.0`
 
 ## 1.48.2.0
+
 - Tailscale package updated to version `1.48.2`
 
 ## 1.48.1.0
+
 - Tailscale package updated to version `1.48.1`
 
 ## 1.48.0.0
+
 - Tailscale package updated to version `1.48.0`
 
 ## 1.46.1.0
+
 - Tailscale package updated to version `1.46.1`
 
 ## 1.46.0.0
+
 - Tailscale package updated to version `1.46.0`
 
 ## 1.44.2.0
+
 - Tailscale package updated to version `1.44.2`
 
 ## 1.44.0.0
+
 - Tailscale package updated to version `1.44.0`
 
 ## 1.42.0.0
+
 - Tailscale package updated to version `1.42.0`
 
 ## 1.40.1.0
+
 - Tailscale package updated to version `1.40.1`
 
 ## 1.40.0.0
+
 - Tailscale package updated to version `1.40.0`
 
 ## 1.38.4.0
+
 - Tailscale package updated to version `1.38.4`
 
 ## 1.38.3.0
+
 - Tailscale package updated to version `1.38.3`
 
 ## 1.38.2.0
+
 - Tailscale package updated to version `1.38.2`
 
 ## 1.38.1.0
+
 - Tailscale package updated to version `1.38.1`
 
 ## 1.36.2.3
+
 - Adds `disable_snat_subnet_routes` option
 
 ## 1.36.2.2
