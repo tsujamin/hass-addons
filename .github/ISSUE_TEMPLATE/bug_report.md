@@ -3,8 +3,9 @@ name: Bug report
 about: Create a report to help us improve
 title: ''
 labels: ''
-assignees: tsujamin
-
+assignees:
+    - tsujamin
+    - bslatyer
 ---
 
 **Describe the bug**
@@ -14,6 +15,7 @@ If the add-on is not starting after an update, confirm that you have waited 24 h
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Go to '...'
 2. Click on '....'
 3. Scroll down to '....'
@@ -23,8 +25,9 @@ Steps to reproduce the behavior:
 A clear and concise description of what you expected to happen.
 
 **Desktop (please complete the following information):**
- - Plugin Version: 
- - Home Assistant/Supervisor Versions:
+
+- Plugin Version:
+- Home Assistant/Supervisor Versions:
 
 **Additional context**
 Add any other context about the problem here.

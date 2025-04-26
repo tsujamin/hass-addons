@@ -8,12 +8,12 @@ Follow these steps to get the add-on installed on your system:
 2. Click the "dot dot dot" icon in the top right corner, followed by the **Repositories** button.
 3. Enter `https://github.com/tsujamin/hass-addons.git` as the new repository and click Add.
 4. Click the "dot dot dot" icon in the top right corner again, and click the **Reload** button
-5. Wait for the page to finish reloading, find the "Tailscale" add-on and click it. 
+5. Wait for the page to finish reloading, find the "Tailscale" add-on and click it.
 6. Click on the "INSTALL" button.
 
 ## How to use
 
-In order to use this add-on, you will need to have an account with Tailscale. 
+In order to use this add-on, you will need to have an account with Tailscale.
 
 A free tier account can be created at their website: <https://login.tailscale.com/start>
 
@@ -29,19 +29,20 @@ One you have an account registered, follow the following steps to start using th
     # optionally, set a custom hostname for the addon to register to Tailscale with
     # hostname: myassistant
     ```
+
 5. Navigate back the the **Info** tab and click **Start** to start using the add-on.
 
-## Known issues ##
+## Known issues
 
 **I'm getting "PONG timeout" errors in the add-on log when trying to connect to my Home Assistant system**
-It appears that enabling "static port mapping" for outbound NAT on your firewall, along with UPNP/NAT-PMP may alleviate this issue. 
+It appears that enabling "static port mapping" for outbound NAT on your firewall, along with UPNP/NAT-PMP may alleviate this issue.
 
 ## Configuration
 
 Example add-on configuration:
 
 ```yaml
-auth_key: tskey-00f9f577b6352d587e673e563 
+auth_key: tskey-00f9f577b6352d587e673e563
 hostname: homeassistant
 force_reauth: false
 ```
@@ -54,10 +55,10 @@ The value of this option is generated in the Tailscale Admin console under the *
 
 There are two types of keys that can be generated:
 
-* **One-off Key**: this key is valid to join one machine, and cannot be reused. This is the **Recommended** key to use when configuring this Add-on. 
+* **One-off Key**: this key is valid to join one machine, and cannot be reused. This is the **Recommended** key to use when configuring this Add-on.
 * **Reusable Key**: this key can be used an unlimited number of times to connect an unlimited number of systems to your Tailscale account, and must be explicitly revoked in order to prevent its use. It is **strongly discouraged** you use this key when configuring the add-on, as compromise of the key could result in unauthorised devices being added you your Tailscale account.
 
-If for some reason you must re-authenticate the add-on to your Tailscale account, and you have used a **One-off Key** as recommended, you will need to generate a new key and update `auth_key` when enabling the `force_reauth` option (see below). 
+If for some reason you must re-authenticate the add-on to your Tailscale account, and you have used a **One-off Key** as recommended, you will need to generate a new key and update `auth_key` when enabling the `force_reauth` option (see below).
 
 ### Option: `hostname` (optional)
 
@@ -81,7 +82,7 @@ Setting this option to `true` will cause Tailscale to reset its configuration se
 
 There are limited circumstances in which this setting is required, such as when changing published routes. In these circumstances, you log output will likely include lines such as
 
-```
+```text
 Error: changing settings via 'tailscale up' requires mentioning all
 non-default flags. To proceed, either re-run your command with --reset [...]
 ```
@@ -90,17 +91,18 @@ This value defaults to `false`.
 
 ### Option: `port` (optional)
 
-This option (if set) determins the UDP port that `tailscaled` listens on. 
+This option (if set) determins the UDP port that `tailscaled` listens on.
 
 It shouldn't be neccesary to set this value as a random port is chosen at startup and UPNP/NAT-PMP should ensure it is appropriately accessible.
 
 ### Option: `advertise_routes`
 
-Tailscale allows you do advertise routes to subnets, accessible on the network your Home Assistant is connected to, to other clients. 
+Tailscale allows you do advertise routes to subnets, accessible on the network your Home Assistant is connected to, to other clients.
 
 This can be configured by adding the IP addresses or subnets (comma-separated) of routes you want to advertise to the `advertise_routes` option. For example:  advertise_routes: `192.168.1.0/24,192.168.2.1/32` to advertise the entire `192.168.1.0/24` subnet and additionally the host `192.168.2.1`.
 
 You will then need to visit Tailscale to complete the setup:
+
   1. Log into the admin portal: <https://login.tailscale.com/admin/>
   2. Find your Home-Assistant in the Machines tab and click on it.
   3. Click the "review" button under "Subnets" and enable your advertise route.
@@ -116,6 +118,7 @@ See <https://tailscale.com/kb/1019/subnets> for more information.
 This option (if set) advertises that the Tailscale instance running on your Home Assistant can be used by other clients to connect to the internet (similar to a regular VPN service).
 
 If enabled, you will then need to visit Tailscale to complete the setup:
+
   1. Log into the admin portal: <https://login.tailscale.com/admin/>
   2. Find your Home-Assistant in the Machines tab and click on it.
   3. Click the "Review Route Settings" button under the "..." button on the top right, and enable "Use as exit node".
@@ -126,7 +129,7 @@ See <https://tailscale.com/kb/1103/exit-nodes> for more information.
 
 ### Option: `exit_node`
 
-This option (if set) configures tailscale to route all non-Tailscale internet traffic through the specified tailscale peer IP. 
+This option (if set) configures tailscale to route all non-Tailscale internet traffic through the specified tailscale peer IP.
 
 If enabled, you will need to have preconfigured the specified IP as an exit node, see the [Official Guide](https://tailscale.com/kb/1103/exit-nodes/#:~:text=in%20the%20future.-,Step%201%3A%20Advertise%20a%20device%20as%20an%20exit%20node,-From%20the%20device) for more information.
 
@@ -141,18 +144,20 @@ This option (if set) configures tailscale to enable connectivity to 100.X style 
 See [Subnets](https://tailscale.com/kb/1019/subnets/#step-5-use-your-subnet-routes-from-other-machines) for more information.
 
 ### Option: `userspace_networking`
+
 This option (if set) configures tailscale to use its userspace networking mode. This should be unnecessary but can be tested if connectivity issues occur.
 
 See [Userspace networking (container) mode](https://tailscale.com/kb/1112/userspace-networking/). for more information.
 
 ### Option: `tags`
+
 This option (if set) configures tailscale to advertise the given tags. The format is the same as for `tailscale up --advertise-tags`: all tags prefixed with `tag:` and separated with commas (ex: `tag:server,tag:hass`).
 
 See [Server role accounts with ACL tags](https://tailscale.com/kb/1068/acl-tags/) for more information.
 
 ### Option: `cert_domain`
 
-This option (if set) configures tailscale to provision TLS certificates. The format is the same as for `tailscale cert <your-domain>`. It's necessary to set the exact domain under which your home assistant instance is running. 
+This option (if set) configures tailscale to provision TLS certificates. The format is the same as for `tailscale cert <your-domain>`. It's necessary to set the exact domain under which your home assistant instance is running.
 
 1. Go to [DNS tab](https://login.tailscale.com/admin/dns) in Tailscale's admin page
 2. Choose a **Tailnet name** and click **Enable HTTPS** under HTTPS Certificates
@@ -178,26 +183,26 @@ This option disables `tailscale` from accepting DNS resolvers. It is currently f
 
 ### Option: `advertise_connector`
 
-This option (if set) configures tailscale to advertise as an _App Connector_. 
+This option (if set) configures tailscale to advertise as an _App Connector_.
 See [Secure your SaaS with Tailscale App connectors](https://tailscale.com/blog/saas) for more information on how to utilise this feature.
 
 ## How to connect your Home Assistant App (iOS)
 
-To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off: 
+To ensure you can access Home Assistant from your mobile app when you're using Tailscale away from home, or when you're at home and have the app turned off:
 
-1. Open up the sidebar by clicking the hamburger button on the top-right of the Home Assistant App, and click "App Configuration"
+* Open up the sidebar by clicking the hamburger button on the top-right of the Home Assistant App, and click "App Configuration"
 
 ![Open App Configuration under the sidebar menu](img/menu.png)
 
-2. Click the name your Home Assistant instance at the top of the menu (e.g. "Home")
+* Click the name your Home Assistant instance at the top of the menu (e.g. "Home")
 
 ![Click your Home Assistant instnace at the top of the App Configuration menu](img/app_config.png)
 
-3. Update the External IP to the IP assigned to your Home Assistant by Tailscale (likely `100.X.Y.Z`). You will likely need to also specify the port (by default this is `8123`).
+* Update the External IP to the IP assigned to your Home Assistant by Tailscale (likely `100.X.Y.Z`). You will likely need to also specify the port (by default this is `8123`).
 
 ![Update your external IP to that assigned by Tailscale, and port to the port you configured Home Assistant to listen on](img/connection.png)
 
-4. Update your Internal IP if required, and assign your home WI-FI network name (SSID) so that the App knows which network your Home-Assistant is connected to internally.
+* Update your Internal IP if required, and assign your home WI-FI network name (SSID) so that the App knows which network your Home-Assistant is connected to internally.
 
 ![Update your internal network and assign your home SSID](img/set_internal.png)
 
