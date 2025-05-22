@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.84.0.0
+
+- Tailscale package updated to version `1.84.0`
+
 ## 1.82.5.0
 
 - Tailscale package updated to version `1.82.5`
