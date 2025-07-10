@@ -1,5 +1,4 @@
 ARG BUILD_ARCH=amd64
-ARG TAILSCALE_VERSION="1.84.0"
 
 FROM homeassistant/${BUILD_ARCH}-base-debian:latest
 
