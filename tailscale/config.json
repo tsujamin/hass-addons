@@ -3,7 +3,7 @@
   "version": "1.94.1.0",
   "slug": "tailscale",
   "description": "A zero config VPN",
-  "url": "https://github.com/tsujamin/hass-addons/tree/main/tailscale",
+  "url": "https://github.com/hass-tailscale/hass-addons/tree/main/tailscale",
   "arch": [
     "armhf",
     "armv7",

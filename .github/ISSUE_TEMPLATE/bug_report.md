@@ -11,7 +11,7 @@ assignees:
 **Describe the bug**
 A clear and concise description of what the bug is.
 
-If the add-on is not starting after an update, confirm that you have waited 24 hours and tried rebuilding the addon via the Home Assistant Supervisor add-on page.
+If the add-on is not starting after an update, confirm that you have waited 24 hours and tried rebuilding the add-on via the Home Assistant Supervisor add-on page.
 
 **To Reproduce**
 Steps to reproduce the behavior:

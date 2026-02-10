@@ -360,7 +360,7 @@
 
 ## 1.26.2.1
 
-- Rolling back `1.26.2` update as binaries were removed from mirror
+- Rolling back `1.26.2` update as binaries were removed from the mirror
 
 ## 1.26.2.0
 
@@ -452,7 +452,7 @@
 
 ## 1.14.3.0
 
-- Tailsacle package updatesd to version `1.14.3`
+- Tailscale package updated to version `1.14.3`
 
 ## 1.14.0.2
 
