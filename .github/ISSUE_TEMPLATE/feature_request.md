@@ -1,22 +1,26 @@
 ---
-name: Feature request
+name: Request a Feature
 about: Suggest an idea for this project
-title: ''
-labels: ''
+title: "[FR]"
+labels: request
 assignees:
-    - tsujamin
-    - bslatyer
-
+  - bslatyer
+  - tsujamin
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## Is your feature request related to a problem?
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Please provide a clear and concise description of the problem.
+Example: I am always frustrated when [...]
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Describe the solution you would like
 
-**Additional context**
+Provide a clear and concise description of what you want to happen.
+
+## Describe alternatives you have considered
+
+Provide a clear and concise description of any alternative solutions or features you have considered.
+
+## Additional context
+
 Add any other context or screenshots about the feature request here.
